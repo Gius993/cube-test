@@ -1,6 +1,6 @@
 //Costants
 const COLOR_BG = 'black';
-const COLOR_CUBE = 'yellow';
+const COLOR_CUBE = 'red';
 const SPED_X = 0.05;
 const SPED_Y = 0.15;
 const SPED_Z = 0.10;

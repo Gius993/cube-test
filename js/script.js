@@ -63,11 +63,30 @@ function loop(timeNow){
 		let dx = v.x - cx;
 		let dy = v.y - cy;
 		let x = dx * Math.cos(angle) - dy * Math.sin(angle);
-		let y= dx * Math.sin(angle) + dy * Math.cos(angle);
+		let y = dx * Math.sin(angle) + dy * Math.cos(angle);
 		v.x = x + cx;
 		v.y = y + cy;
 	}
+	//rotate the cube along the x axis
+	 angle = timeDelta * 0.001 * SPED_X * Math.PI * 2;
+	for(let v of vertices){
+		let dy = v.y - cy;
+		let dz = v.z - cz;
+		let y = dy * Math.cos(angle) - dz * Math.sin(angle);
+		let z = dz * Math.sin(angle) + dz * Math.cos(angle);
+		v.y = y + cy;
+		v.z = z + cz;
+	}
 
+	angle = timeDelta * 0.001 * SPED_Z * Math.PI * 2;
+	for(let v of vertices){
+		let dy = v.y - cy;
+		let dz = v.z - cz;
+		let y = dy * Math.cos(angle) - dz * Math.sin(angle);
+		let z = dz * Math.sin(angle) + dz * Math.cos(angle);
+		v.y = y + cy;
+		v.z = z + cz;
+	}
 	//draw each edge
 	for(let edge of edges){
 		ctx.beginPath();

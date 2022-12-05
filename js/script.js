@@ -79,15 +79,7 @@ function loop(timeNow){
 	}
 
 	//rotate the cube  along the y axis
-	angle = timeDelta * 0.001 * SPED_Y * Math.PI * 2;
-	for(let v of vertices){
-		let dy = v.y - cy;
-		let dz = v.z - cz;
-		let y = dz * Math.cos(angle) - dz * Math.sin(angle);
-		let z = dz * Math.sin(angle) + dz * Math.cos(angle);
-		v.y = y + cy;
-		v.z = z + cz;
-	}
+
 	//draw each edge
 	for(let edge of edges){
 		ctx.beginPath();

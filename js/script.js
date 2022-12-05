@@ -24,5 +24,28 @@ ctx.strokeStyle = COLOR_CUBE;
 ctx.lineWidth = w / 100;
 ctx.lineCap = 'round';
 
+//cube parameters
+let cx = w / 2;
+let cy = h / 2;
+let cz = 0;
+let size = h / 4;
+
+//set up the animation loop
+let timeDelta, timeLast = 0;
+requestAnimationFrame(loop);
+
+//function
+
+function loop(timeNow){
+	timeDelta = timeNow - timeLast;
+	timeLast = timeNow;
+
+	//background
+	ctx.fillRect(0, 0, w, h);
+
+	//call the next frame
+	requestAnimationFrame(loop);
+}
+
 
 
